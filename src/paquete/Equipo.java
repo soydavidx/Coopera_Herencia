@@ -1,9 +1,6 @@
 package paquete;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public abstract class Equipo {
 	public static ArrayList<Equipo> ListaEquipos = new ArrayList<>();
@@ -12,12 +9,9 @@ public abstract class Equipo {
 	
 	private static int contador = 1;	
 	private double presupuesto;
-
 	private int id;
-
 	private String nombreEquipo;
 	private int nJugadores;
-
 	private ArrayList<Persona> GrupoPersonales = new ArrayList<>();
 	private Deporte deporte;
 	private int puntos;

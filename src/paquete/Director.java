@@ -33,8 +33,8 @@ public class Director extends Persona {
 		//6.eliminar de la bolsa
 	}
 
-	public static void intercambio() throws IOException {
-		Scanner scanner = new Scanner(System.in);
+	public static void intercambio(Scanner scanner) throws IOException {
+
 		String nombreEquipo1;
 		String nombreEquipo2;
 		Equipo equipo1 = null;

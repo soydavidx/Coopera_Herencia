@@ -1,11 +1,8 @@
 package paquete;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +26,6 @@ public class principal {
 	}
 
 	public static void InicioPrograma() throws IOException {
-
 		Scanner scanner = new Scanner(System.in);
 
 		int opcionUsuario = 0;
@@ -44,7 +40,7 @@ public class principal {
 			if (scanner.hasNextInt()) {
 				opcionUsuario = scanner.nextInt();
 				scanner.nextLine();
-				CambiarOpciones(opcionUsuario);
+				CambiarOpciones(opcionUsuario,scanner);
 			} else {
 				System.err.println("No has ingresado una opcion correcta dentro del sistema, intentalo nuevamente");
 				scanner.nextLine();
@@ -59,18 +55,18 @@ public class principal {
 
 	}
 
-	public static void CambiarOpciones(int opcionUsuario) throws IOException {
+	public static void CambiarOpciones(int opcionUsuario,Scanner scanner) throws IOException {
 		switch (opcionUsuario) {
 		case 1: {
 			System.out.println("Opcion 1. Mostrar datos de un equipo");
 			System.out.println("--------------------");
-			MostrarDatos();
+			MostrarDatos(scanner);
 			break;
 		}
 		case 2: {
 			System.out.println("Opcion 2. Intercambiar un jugador");
 			System.out.println("--------------------");
-			Director.intercambio();
+			Director.intercambio(scanner);
 
 			break;
 		}
@@ -91,9 +87,8 @@ public class principal {
 		System.out.println("--------------------");
 	}
 
-	public static void MostrarDatos() {
+	public static void MostrarDatos(Scanner scanner) {
 		System.out.println("Introduzca el nombre de un equipo para mostrar sus datos");
-		Scanner scanner = new Scanner(System.in);
 		String NombreEquipo = scanner.nextLine().toLowerCase();
 		// verificar si el equipo tecleado existe
 		for (Equipo equipo : Equipo.ListaEquipos) {
@@ -169,7 +164,6 @@ public class principal {
 	
 	public static void LeerArchivoPartida() throws IOException {
         BufferedReader bfr = new BufferedReader(new FileReader("src/Partidos.txt"));
-
 
         String line;
 
