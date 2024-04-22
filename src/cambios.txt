@@ -1,0 +1,5 @@
+1.modificar metodos para el fichero JugadoresBolsa
+2.añadir presupuestos para cada equipo
+3.restar presupuestos para cada contratacion segun el valor que tenga el jugador
+4.aumento del 1% del valor a cada equipo que gane la partida
+5.Un equipo pueda tener más de un deporte.

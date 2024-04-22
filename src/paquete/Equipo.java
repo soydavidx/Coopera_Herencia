@@ -1,13 +1,12 @@
 package paquete;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Equipo {
 	public static ArrayList<Equipo> ListaEquipos = new ArrayList<>();
+	
+	public static ArrayList<Persona>Bolsa = new ArrayList<>();
+	
 	private static int contador = 1;
 
 	private int id;
