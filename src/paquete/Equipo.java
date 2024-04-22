@@ -5,13 +5,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Equipo {
+public abstract class Equipo {
 	public static ArrayList<Equipo> ListaEquipos = new ArrayList<>();
 	
 	public static ArrayList<Persona>Bolsa = new ArrayList<>();
 	
 	private static int contador = 1;	
-	private int presupuesto;
+	private double presupuesto;
 
 	private int id;
 
@@ -54,18 +54,18 @@ public class Equipo {
 		Entrenador.EstablecerTitular();
 	}
 	
-	public static void AnadirPorcentajeEquipo() {
-		//ordenar de mayor a menor a los equipos segun sus puntos
-		List<Equipo>orden = Equipo.ListaEquipos.stream()
-				.sorted(Comparator.comparing(Equipo::getPuntos).reversed())
-				.collect(Collectors.toList());
-		//encontrar el equipo en ranking 1 y setearle su presupuesto a 1% mas
-		int posEquipo = Equipo.ListaEquipos.indexOf(orden.get(0));
-		Equipo equipoRefe = Equipo.getListaEquipos().get(posEquipo);
-		//el problema ocurre porque para sumar el 1 porciento hay que cambiar a double , puntos
-		//cambiar a double el atributo puntos
-		equipoRefe.setPuntos(equipoRefe.getPuntos() + (equipoRefe.getPuntos() * 0.01));
-		
+	public static void AnadirPorcentajeEquipo(Equipo equipo1, Equipo equipo2, int puntuacion1, int puntuacion2) {
+		//si gana el equipo1
+		if (puntuacion1 > puntuacion2) {
+		equipo1.setPresupuesto(equipo1.getPresupuesto() + (equipo1.getPresupuesto() * 0.01));
+		//si gana el equipo2
+		}else if (puntuacion1 < puntuacion2) {
+		equipo2.setPresupuesto(equipo2.getPresupuesto() + (equipo2.getPresupuesto() * 0.01));
+		//si empatan
+		}else {
+		equipo1.setPresupuesto(equipo1.getPresupuesto() + (equipo1.getPresupuesto() * 0.005));
+		equipo2.setPresupuesto(equipo2.getPresupuesto() + (equipo2.getPresupuesto() * 0.005));
+		}
 	}
 
 	public int getId() {
@@ -143,12 +143,12 @@ public class Equipo {
 	}
 
 
-	public int getPresupuesto() {
+	public double getPresupuesto() {
 		return presupuesto;
 	}
 
 
-	public void setPresupuesto(int presupuesto) {
+	public void setPresupuesto(double presupuesto) {
 		this.presupuesto = presupuesto;
 	}
 	
