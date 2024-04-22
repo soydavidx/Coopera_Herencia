@@ -1,0 +1,22 @@
+AsaltaAbuelas, 1, RevientaAbuelas, 0
+Juan1, perez1, sancion
+Juan3, perez3, tanto
+Juan5, perez5, sancion
+AsaltaAbuelas, 0, RobaAbuelas, 0
+RobaAbuelas, 0, RevientaAbuelas, 3
+Pepe5, perez5, sancion
+Pepe1, perez1, tanto
+Pepe1, perez1, tanto
+Pepe2, perez2, tanto
+MaltrataAbuelas, 0, JodeAbuelas, 1
+Madrid5, perez5, tanto
+MaltrataAbuelas, 0, LameAbuelas, 1
+Pablo8, perez8, tanto
+LameAbuelas, 1, JodeAbuelas, 0
+Pablo2, perez2, tanto
+MachacaAbuelas, 0, CagaAbuelas, 1
+Pepinho4, perez4, tanto
+MachacaAbuelas, 1, GolpeaAbuelas, 0
+City2, perez2, tanto
+CagaAbuelas, 1, GolpeaAbuelas, 0
+Pepinho7, perez7, tanto
