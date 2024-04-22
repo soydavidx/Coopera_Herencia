@@ -11,6 +11,27 @@ public class Director extends Persona {
 		super.setId(contador);
 		contador++;
 	}
+	public static void MenuModificarJugador() {
+		//cambiar en el menu principal donde ponga intercambio a MenuModificarJugador
+		//preguntara al usuario que opcion elegir entre vender , fichar o intercambio
+		//invocar el metodo vender , fichar o intercambio con un switch
+	}
+	
+	public static void VenderJugador() {
+		//1.mostrar jugadores en el equipo
+		//2.elegir un jugador del equipo
+		//3.modificar el idEquipo del jugador a 0
+		//4.anadir el jugador a la bolsa
+		//5.eliminar del equipo
+	}
+	public static void FicharJugadorBolsa() {
+		//1.mostrar jugadores disponibles en la bolsa
+		//2.elegir un jugador de la bolsa
+		//3.modificar el idEquipo del jugador de 0 al de equipo fichado
+		//4.anadir el jugador al equipo
+		//5 quitar el presupuesto del equipo segun el valor del jugador
+		//6.eliminar de la bolsa
+	}
 
 	public static void intercambio() throws IOException {
 		Scanner scanner = new Scanner(System.in);

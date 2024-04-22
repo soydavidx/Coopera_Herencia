@@ -32,10 +32,8 @@ public abstract class Persona {
 			String[] datos = line.split(", ");
 
 			switch (datos[2]) {
-			case "jugador" -> ListaPersona.add(new Jugador(datos[0], datos[1], datos[2], Integer.parseInt(datos[3]),
-					datos[4], Integer.parseInt(datos[5]), Integer.parseInt(datos[6])));
-			case "entrenador" ->
-				ListaPersona.add(new Entrenador(datos[0], datos[1], datos[2], Integer.parseInt(datos[3])));
+			case "jugador" -> ListaPersona.add(new Jugador(datos[0], datos[1], datos[2], Integer.parseInt(datos[3]), datos[4],Integer.parseInt(datos[5]), Integer.parseInt(datos[6])));
+			case "entrenador" -> ListaPersona.add(new Entrenador(datos[0], datos[1], datos[2], Integer.parseInt(datos[3])));
 			case "director" -> ListaPersona.add(new Director(datos[0], datos[1], datos[2], Integer.parseInt(datos[3])));
 			case "Sepak Takraw" -> Equipo.ListaEquipos.add(new Equipo(datos[0], Deporte.Deportes.get(0)));
 			case "voleibol" -> Equipo.ListaEquipos.add(new Equipo(datos[0], Deporte.Deportes.get(1)));
@@ -46,6 +44,8 @@ public abstract class Persona {
 			for (Persona persona : ListaPersona) {
 				if (persona.getIdEquipo() == equipo.getId())
 					equipo.getGrupoPersonales().add(persona);
+				if(persona.getIdEquipo() == 0)
+					Equipo.getBolsa().add(persona);
 			}
 		}
 	}
@@ -57,10 +57,10 @@ public abstract class Persona {
 			brw.write(equipo.getNombreEquipo() + ", " + 0 + ", " + equipo.getDeporte().getNombre() + "\n");
 			for (Persona persona : equipo.getGrupoPersonales()) {
 				switch (persona.getProfesion()) {
-				case "jugador" ->
-					brw.write(persona.getNombre() + ", " + persona.getApellido() + ", " + persona.getProfesion() + ", "
-							+ persona.getIdEquipo() + ", " + ((Jugador) persona).getPosicion() + ", "
-							+ ((Jugador) persona).getTotalSanciones() + ", " + ((Jugador) persona).getTotalMarcados() + "\n");
+				case "jugador" -> brw.write(persona.getNombre() + ", " + persona.getApellido() + ", "
+						+ persona.getProfesion() + ", " + persona.getIdEquipo() + ", "
+						+ ((Jugador) persona).getPosicion() + ", " + ((Jugador) persona).getTotalSanciones() + ", "
+						+ ((Jugador) persona).getTotalMarcados() + "\n");
 				case "entrenador" -> brw.write(persona.getNombre() + ", " + persona.getApellido() + ", "
 						+ persona.getProfesion() + ", " + persona.getIdEquipo() + "\n");
 				case "director" -> brw.write(persona.getNombre() + ", " + persona.getApellido() + ", "

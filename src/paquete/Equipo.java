@@ -1,13 +1,17 @@
 package paquete;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Equipo {
 	public static ArrayList<Equipo> ListaEquipos = new ArrayList<>();
 	
 	public static ArrayList<Persona>Bolsa = new ArrayList<>();
 	
-	private static int contador = 1;
+	private static int contador = 1;	
+	private int presupuesto;
 
 	private int id;
 
@@ -48,6 +52,20 @@ public class Equipo {
 		}
 		Persona.ActualizarFicheroEquipos();
 		Entrenador.EstablecerTitular();
+	}
+	
+	public static void AnadirPorcentajeEquipo() {
+		//ordenar de mayor a menor a los equipos segun sus puntos
+		List<Equipo>orden = Equipo.ListaEquipos.stream()
+				.sorted(Comparator.comparing(Equipo::getPuntos).reversed())
+				.collect(Collectors.toList());
+		//encontrar el equipo en ranking 1 y setearle su presupuesto a 1% mas
+		int posEquipo = Equipo.ListaEquipos.indexOf(orden.get(0));
+		Equipo equipoRefe = Equipo.getListaEquipos().get(posEquipo);
+		//el problema ocurre porque para sumar el 1 porciento hay que cambiar a double , puntos
+		//cambiar a double el atributo puntos
+		equipoRefe.setPuntos(equipoRefe.getPuntos() + (equipoRefe.getPuntos() * 0.01));
+		
 	}
 
 	public int getId() {
@@ -113,4 +131,25 @@ public class Equipo {
 	public void setUltimoIntercambio(String ultimoIntercambio) {
 		this.ultimoIntercambio = ultimoIntercambio;
 	}
+
+
+	public static ArrayList<Persona> getBolsa() {
+		return Bolsa;
+	}
+
+
+	public static void setBolsa(ArrayList<Persona> bolsa) {
+		Bolsa = bolsa;
+	}
+
+
+	public int getPresupuesto() {
+		return presupuesto;
+	}
+
+
+	public void setPresupuesto(int presupuesto) {
+		this.presupuesto = presupuesto;
+	}
+	
 }
