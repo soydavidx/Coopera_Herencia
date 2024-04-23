@@ -36,16 +36,19 @@ public abstract class Equipo {
 	}
 	
 	public static void actualizarEquipos() throws IOException {
-		for (Equipo equipo : ListaEquipos) {
-			equipo.getGrupoPersonales().clear();
-			for (Persona persona : Persona.ListaPersona) {
-				if (persona.getIdEquipo()==equipo.getId())
-					equipo.getGrupoPersonales().add(persona);
-			}
-		}
-		Persona.ActualizarFicheroEquipos();
-		Entrenador.EstablecerTitular();
-	}
+        Equipo.Bolsa.clear();
+        for (Equipo equipo : ListaEquipos) {
+            equipo.getGrupoPersonales().clear();
+            for (Persona persona : Persona.ListaPersona) {
+                if (persona.getIdEquipo()==equipo.getId())
+                    equipo.getGrupoPersonales().add(persona);
+                if (persona.getIdEquipo() == 0)
+                    Equipo.getBolsa().add(persona);
+            }
+        }
+        Persona.ActualizarFicheroEquipos();
+        Entrenador.EstablecerTitular();
+    }
 	
 	public static void AnadirPorcentajeEquipo(Equipo equipo1, Equipo equipo2, int puntuacion1, int puntuacion2) {
 		//si gana el equipo1

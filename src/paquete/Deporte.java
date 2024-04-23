@@ -41,7 +41,7 @@ public class Deporte {
 			// CON ESTE WHILE PODREMOS LEER LOS DATOS DEL FICHERO
 			while ((line = br.readLine()) != null) {
 				String[] datos = line.split(", ");
-				Deportes.add(new Deporte(datos[0], Integer.parseInt(datos[1])));
+				Deportes.add(new Deporte(datos[0].toLowerCase(), Integer.parseInt(datos[1])));
 			}
 		} catch (Exception e) {
 			System.out.println("Error.");

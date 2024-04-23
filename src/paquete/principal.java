@@ -91,7 +91,35 @@ public class principal {
 	}
 
 	public static void MostrarDatos(Scanner scanner) {
-		System.out.println("Introduzca el nombre de un equipo para mostrar sus datos");
+		boolean existe = false;
+		System.out.println("Disponemos de esos deportes :");
+		System.out.println("--------------------");
+		Deporte.Deportes.stream()
+	    .map(deporte -> deporte.getNombre())
+	    .forEach(deporte -> System.out.println(deporte));
+		System.out.println("--------------------");
+		
+		System.out.println("\nIntroduce un Deporte");
+		String ReferenciaDeporte = scanner.nextLine().toLowerCase();
+		
+		for (Deporte deporte : Deporte.Deportes) {
+			if (deporte.getNombre().equals(ReferenciaDeporte)) {
+				existe = true;
+				break;
+			}
+		}
+		
+		if (existe == false) {
+			System.out.println("Error debes introducir un deporte mencionado repitelo otra vez");
+			MostrarDatos(scanner);
+		}
+		
+		System.out.println("Tenemos esos equipos en el deporte " + ReferenciaDeporte + ":") ;
+		Equipo.ListaEquipos.stream()
+		.filter(equipo -> equipo.getDeporte().getNombre().equals(ReferenciaDeporte))
+		.forEach(equipo -> System.out.println(equipo.getNombreEquipo()));
+		//optimizar bucle for
+		System.out.println("\nIntroduzca el nombre de un equipo para mostrar sus datos");
 		String NombreEquipo = scanner.nextLine().toLowerCase();
 		// verificar si el equipo tecleado existe
 		for (Equipo equipo : Equipo.ListaEquipos) {

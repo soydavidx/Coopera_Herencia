@@ -95,44 +95,68 @@ public class Director extends Persona {
 
 		String nombreEquipo1;
 		String nombreEquipo2;
+		String nombreDeporte;
+		Deporte deporteFichaje = null;
 		Equipo equipo1 = null;
 		Equipo equipo2 = null;
 		Persona jugador1 = null;
 		Persona jugador2 = null;
-		
-		boolean equipo1Existe = false;
-		boolean equipo2Existe = false;
-		
-		
-		while (!equipo1Existe) {
-			System.out.println("Que equipo va a realizar el fichaje");
+
+		for (Deporte deporteExistente : Deporte.Deportes)
+			System.out.println(deporteExistente.getNombre());
+
+		while (deporteFichaje == null) {
+			System.out.println("\nSeleccione un deporte");
+			nombreDeporte = scanner.nextLine().toLowerCase();
+			for (Deporte deporte : Deporte.Deportes) {
+				if (deporte.getNombre().toLowerCase().equals(nombreDeporte)) {
+					deporteFichaje = deporte;
+					break;
+				}
+			}
+			if (deporteFichaje == null)
+				System.out.println("Ese deporte no existe");
+		}
+
+		for (Equipo equipoDeporte : Equipo.ListaEquipos) {
+			if (equipoDeporte.getDeporte() == deporteFichaje)
+				System.out.println(equipoDeporte.getNombreEquipo());
+		}
+
+		while (equipo1 == null) {
+			System.out.println("\nQue equipo va a realizar el fichaje");
 			nombreEquipo1 = scanner.nextLine().toLowerCase();
 			for (Equipo Equipo : Equipo.ListaEquipos) {
-				if (Equipo.getNombreEquipo().toLowerCase().equals(nombreEquipo1)) {
-					equipo1Existe = true;
+				if (Equipo.getNombreEquipo().toLowerCase().equals(nombreEquipo1)
+						&& Equipo.getDeporte() == deporteFichaje) {
 					equipo1 = Equipo;
 					break;
 				}
 			}
-			if (!equipo1Existe)
+			if (equipo1 == null)
 				System.out.println("Ese equipo no existe");
 		}
-		
-		while (!equipo2Existe) {
-			System.out.println("Con que equipo desea realizar el intercambio");
+
+		for (Equipo equipoDeporte : Equipo.ListaEquipos) {
+			if (equipoDeporte.getDeporte() == deporteFichaje && equipoDeporte != equipo1)
+				System.out.println(equipoDeporte.getNombreEquipo());
+		}
+
+		while (equipo2 == null) {
+			System.out.println("\nCon que equipo desea realizar el intercambio");
 			nombreEquipo2 = scanner.nextLine().toLowerCase();
 			for (Equipo Equipo : Equipo.ListaEquipos) {
-				if (Equipo.getNombreEquipo().toLowerCase().equals(nombreEquipo2) && equipo1.getDeporte() == Equipo.getDeporte() && equipo1 != equipo2) {
-					equipo2Existe = true;
+				if (Equipo.getNombreEquipo().toLowerCase().equals(nombreEquipo2)
+						&& equipo1.getDeporte() == Equipo.getDeporte() && equipo1 != equipo2) {
 					equipo2 = Equipo;
 					break;
 				}
 			}
-			if (!equipo2Existe)
+			if (equipo2 == null)
 				System.out.println("No existe un equipo con ese nombre con el que puedas intercambiar jugadores");
 		}
-		
-		//Aqui pides jugadores
+
+		// Aqui pides jugadores
 		int cont = 0;
 		System.out.println("Selecciona el jugador que quieres");
 		for (Persona persona : equipo2.getGrupoPersonales()) {
@@ -154,12 +178,12 @@ public class Director extends Persona {
 				}
 			}
 		}
-		
+
 		if (jugador1 == null) {
 			System.out.println("Ese valor no es valido");
 			return;
 		}
-			
+
 		cont = 0;
 		System.out.println("Selecciona el jugador que quieres dar a cambio");
 		for (Persona persona : equipo1.getGrupoPersonales()) {
@@ -168,9 +192,9 @@ public class Director extends Persona {
 				System.out.println(cont + ". " + persona.getNombre() + " " + persona.getApellido());
 			}
 		}
-		
+
 		num = scanner.nextInt();
-		
+
 		cont = 0;
 		for (Persona persona : equipo1.getGrupoPersonales()) {
 			if (persona.getProfesion().equals("jugador")) {
@@ -184,13 +208,15 @@ public class Director extends Persona {
 				}
 			}
 		}
-		
+
 		if (jugador2 == null) {
 			System.out.println("Ese valor no es valido");
 			return;
 		}
-		equipo1.setUltimoIntercambio("Ofrecieron a " + jugador2.getNombre() + " " + jugador2.getApellido() + " por " + jugador1.getNombre() + " " + jugador1.getApellido());
-		equipo2.setUltimoIntercambio("Ofrecieron a " + jugador1.getNombre() + " " + jugador1.getApellido() + " por " + jugador2.getNombre() + " " + jugador2.getApellido());
+		equipo1.setUltimoIntercambio("Ofrecieron a " + jugador2.getNombre() + " " + jugador2.getApellido() + " por "
+				+ jugador1.getNombre() + " " + jugador1.getApellido());
+		equipo2.setUltimoIntercambio("Ofrecieron a " + jugador1.getNombre() + " " + jugador1.getApellido() + " por "
+				+ jugador2.getNombre() + " " + jugador2.getApellido());
 		Equipo.actualizarEquipos();
 	}
 }
