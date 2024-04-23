@@ -3,6 +3,7 @@ package paquete;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.MulticastSocket;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
@@ -30,10 +31,12 @@ public class principal {
 
 		int opcionUsuario = 0;
 		System.out.println("Bienvenid@ a la NavesLiga. En la NavesLiga todos ganamos!!!");
+		System.out.println(Director.barra);
 		do {
+			System.out.println("MENU PRINCIPAL");
 			System.out.println("Que deseas hacer hoy? (Inserta el numero de la accion por consola)\n");
 			System.out.println("1. Mostrar datos de un equipo.");
-			System.out.println("2. Intercambiar un jugador");
+			System.out.println("2. Mercado de fichajes de jugadores");
 			System.out.println("3. Ver resultados de las ligas");
 			System.out.println("4. Salir del programa");
 
@@ -66,8 +69,8 @@ public class principal {
 		case 2: {
 			System.out.println("Opcion 2. Intercambiar un jugador");
 			System.out.println("--------------------");
-			Director.intercambio(scanner);
-
+			//Director.intercambio(scanner);
+			Director.MenuModificarJugador(scanner);
 			break;
 		}
 		case 3: {
