@@ -25,7 +25,6 @@ public abstract class Equipo {
 		this.ultimoIntercambio = "No hay intercambios recientes";
 	}
 
-
 	public static void sumarPuntos(Equipo equipo1, int puntosEquipo1, Equipo equipo2, int puntosEquipo2) {
 		if (puntosEquipo1 == puntosEquipo2) {
 			equipo1.setPuntos(equipo1.getPuntos() + 1);

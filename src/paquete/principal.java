@@ -185,9 +185,6 @@ public class principal {
             	Equipo.sumarPuntos(equipo1, Integer.parseInt(datos[1]), equipo2, Integer.parseInt(datos[3]));
             }
         }
-        for (Equipo equipo : Equipo.ListaEquipos) {
-        	System.out.println(equipo.getNombreEquipo() + " " + equipo.getPuntos());
-        }
         Persona.ActualizarFicheroEquipos();
         Entrenador.EstablecerTitular();
         MostrarRanking();
@@ -222,7 +219,6 @@ public class principal {
     
 	public static Equipo verificarNombreEquipo(String Nombre) {
 		// verificar si el equipo tecleado existe
-		System.out.println("a");
 		for (Equipo equipo : Equipo.ListaEquipos) {
 			if (equipo.getNombreEquipo().toLowerCase().equals(Nombre.toLowerCase())) {
 				return equipo;

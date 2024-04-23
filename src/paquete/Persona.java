@@ -83,7 +83,7 @@ public abstract class Persona {
 			Entrenador.EstablecerTitular();
 		} catch (Exception e) {
 			System.out.println("Error.");
-		    e.printStackTrace();
+			e.printStackTrace();
 		} finally {
 			brw.close();
 		}
