@@ -94,7 +94,7 @@ Pepinho6, perez6, jugador, 8, posicion2, 0, 0
 Pepinho7, perez7, jugador, 8, posicion2, 0, 7
 Pepinho8, perez8, director, 8
 Pepinho9, perez9, entrenador, 8
-GolpeaAbuelas, 0, voleibol, 12000
+AsaltaAbuelas, 0, voleibol, 12000
 Aaron1, perez1, jugador, 9, posicion2, 0, 0
 Aaron2, perez2, jugador, 9, posicion2, 0, 0
 Aaron3, perez3, jugador, 9, posicion2, 0, 0
@@ -104,5 +104,5 @@ Aaron6, perez6, jugador, 9, posicion2, 0, 0
 Aaron7, perez7, jugador, 9, posicion2, 0, 0
 Aaron8, perez8, director, 9
 Aaron9, perez9, entrenador, 9
-Juan99, perez99, jugador, 0, posicion2, 0, 0
-Juan100, perez100, jugador, 0, posicion1, 0, 0
+Juan99, perez99, jugador, 9, posicion2, 0, 0
+Juan100, perez100, jugador, 9, posicion1, 0, 0

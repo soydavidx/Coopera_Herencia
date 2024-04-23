@@ -4,17 +4,74 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Director extends Persona {
+	static String barra = "-------------------------------------";
 	private static int contador = 1;
-
+	
 	public Director(String nombre, String apellido, String profesion, int equipo) {
 		super(nombre, apellido, profesion, equipo);
 		super.setId(contador);
 		contador++;
 	}
-	public static void MenuModificarJugador() {
-		//cambiar en el menu principal donde ponga intercambio a MenuModificarJugador
-		//preguntara al usuario que opcion elegir entre vender , fichar o intercambio
-		//invocar el metodo vender , fichar o intercambio con un switch
+	public static void MenuModificarJugador(Scanner scanner) throws IOException {
+		//El usuario ingresa a un menu exclusivo para la bolsa de jugadores disponibles
+		System.out.println("Bienvenido a la bolsa de jugadores de NavesLiga!\n");
+		int opcionUsuario = 0;
+		
+		do {
+			System.out.println("Ingresa que opcion deseas realizar:");
+			System.out.println("1. Comprar un jugador");
+			System.out.println("2. Vender un jugador");
+			System.out.println("3. Intercambiar un jugador");
+			System.out.println("4. Salir de la Bolsa");
+	
+			//Se comprueba si el ususario ha ingresado un numero o un caracter invalido
+			if (scanner.hasNextInt()) {
+				opcionUsuario = scanner.nextInt();
+				if(scanner.hasNextLine()){
+					scanner.nextLine();
+					}
+				//Se comprueba a que clase debe dirigirse segun la opcion del usuario
+				opcionesBolsa(opcionUsuario, scanner);
+			} else {
+				System.err.println("No has ingresado una opcion correcta dentro del sistema, intentalo nuevamente");
+				scanner.nextLine();
+			}
+		} while (opcionUsuario != 4);
+		
+		if (opcionUsuario == 4) {
+			System.out.println("Vuelve a la bolsa de NavesLiga cuando quieras!");
+		}
+	}
+	
+	public static void opcionesBolsa(int opcionUsuario,Scanner scanner) throws IOException {
+		switch (opcionUsuario) {
+		case 1: {
+			System.out.println("Comprar un jugador");
+			FicharJugadorBolsa();
+			System.out.println(barra);
+			break;
+		}
+		case 2:{
+			System.out.println("Vender un jugador");
+			VenderJugador();
+			System.out.println(barra);
+			break;
+		}
+		case 3:{
+			System.out.println("Intercambiar un jugador");
+			System.out.println(barra);
+			intercambio(scanner);
+			break;
+		}
+		case 4:{
+			System.out.println("Salir de la bolsa de NavesLiga");
+			System.out.println(barra);
+			break;
+		}
+		default:
+			System.out.println("No hay una opcion disponible para el numero ingresado");
+			System.out.println("Intentalo nuevamente y escoge una opcion valida.\n");
+		}
 	}
 	
 	public static void VenderJugador() {
@@ -33,6 +90,7 @@ public class Director extends Persona {
 		//6.eliminar de la bolsa
 	}
 
+	
 	public static void intercambio(Scanner scanner) throws IOException {
 
 		String nombreEquipo1;
