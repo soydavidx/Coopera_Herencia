@@ -4,8 +4,8 @@ public class EquipoSepak extends Equipo {
 
 	private static int nSepak = 0;
 	
-	public EquipoSepak(String nombreEquipo, Deporte deporte) {
-		super(nombreEquipo, deporte);
+	public EquipoSepak(String nombreEquipo, Deporte deporte, double presupuesto) {
+		super(nombreEquipo, deporte, presupuesto);
 		nSepak = nSepak++;
 	}
 

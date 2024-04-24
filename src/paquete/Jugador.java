@@ -19,7 +19,7 @@ public class Jugador extends Persona {
 		this.TotalSanciones = TotalSanciones;
 		this.TotalMarcados = TotalMarcados;
 		super.setId(contador);
-		this.valor = CalcularValor();
+		this.valor = CalcularValor(this);
 		this.titular = false;
 		contador++;
 	}
@@ -29,11 +29,16 @@ public class Jugador extends Persona {
 			((Jugador) jugador).setTotalMarcados(((Jugador) jugador).getTotalMarcados() + 1);
 		else
 			((Jugador) jugador).setTotalSanciones(((Jugador) jugador).getTotalSanciones() + 1);
+		((Jugador) jugador).setValor(Jugador.CalcularValor(jugador));
 	}
 	
 	// despues de haber jugado una partida
-	private double CalcularValor() {
-		return (TotalMarcados * 1000) - (TotalSanciones * 500);
+	static double CalcularValor(Persona jugador) {
+		double valor = (((Jugador) jugador).getTotalMarcados() * 1000) - (((Jugador) jugador).getTotalSanciones() * 500);
+		if (valor < 100)
+			return 100;
+		else
+			return valor;
 	}
 
 	public String getPosicion() {

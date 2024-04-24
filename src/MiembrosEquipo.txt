@@ -1,21 +1,21 @@
-AsaltaAbuelas, 0, sepak takraw
+AsaltaAbuelas, 0, sepak takraw, 10403,41
+Juan1, perez1, jugador, 1, posicion1, 12, 0
 Juan2, perez2, jugador, 1, posicion2, 0, 0
-Juan3, perez3, jugador, 1, posicion3, 1, 7
+Juan3, perez3, jugador, 1, posicion3, 1, 13
 Juan4, perez4, jugador, 1, posicion1, 0, 0
-Juan5, perez5, jugador, 1, posicion2, 7, 0
+Juan5, perez5, jugador, 1, posicion2, 13, 0
 Juan6, perez6, jugador, 1, posicion3, 0, 0
 Juan7, perez7, director, 1
 Juan8, perez8, entrenador, 1
-Juan1, perez1, jugador, 1, posicion1, 6, 0
-RevientaAbuelas, 0, sepak takraw
-Pepe1, perez1, jugador, 2, posicion1, 0, 14
-Pepe2, perez2, jugador, 2, posicion2, 0, 7
+RevientaAbuelas, 0, sepak takraw, 10406,04
+Pepe1, perez1, jugador, 2, posicion1, 0, 26
+Pepe2, perez2, jugador, 2, posicion2, 0, 13
 Pepe3, perez3, jugador, 2, posicion3, 0, 0
 Pepe4, perez4, jugador, 2, posicion1, 0, 0
-Pepe5, perez5, jugador, 2, posicion2, 7, 0
+Pepe5, perez5, jugador, 2, posicion2, 13, 0
 Pepe6, perez6, director, 2
 Pepe7, perez7, entrenador, 2
-RobaAbuelas, 0, sepak takraw
+RobaAbuelas, 0, sepak takraw, 10201,51
 Ruben1, perez1, jugador, 3, posicion1, 0, 0
 Ruben2, perez2, jugador, 3, posicion2, 0, 0
 Ruben3, perez3, jugador, 3, posicion3, 0, 0
@@ -25,7 +25,7 @@ Ruben6, perez6, jugador, 3, posicion1, 0, 0
 Ruben7, perez7, jugador, 3, posicion2, 0, 0
 Ruben8, perez8, director, 3
 Ruben9, perez9, entrenador, 3
-MaltrataAbuelas, 0, rugby subacuatico
+MaltrataAbuelas, 0, rugby subacuatico, 10000,00
 Lola1, perez1, jugador, 4, posicion1, 0, 0
 Lola2, perez2, jugador, 4, posicion2, 0, 0
 Lola3, perez3, jugador, 4, posicion3, 0, 0
@@ -42,15 +42,15 @@ Lola13, perez13, jugador, 4, posicion2, 0, 0
 Lola14, perez14, jugador, 4, posicion3, 0, 0
 Lola15, perez15, director, 4
 Lola16, perez16, entrenador, 4
-LameAbuelas, 0, rugby subacuatico
+LameAbuelas, 0, rugby subacuatico, 10828,57
 Pablo1, perez1, jugador, 5, posicion1, 0, 0
-Pablo2, perez2, jugador, 5, posicion2, 0, 7
+Pablo2, perez2, jugador, 5, posicion2, 0, 13
 Pablo3, perez3, jugador, 5, posicion3, 0, 0
 Pablo4, perez4, jugador, 5, posicion1, 0, 0
 Pablo5, perez5, jugador, 5, posicion2, 0, 0
 Pablo6, perez6, jugador, 5, posicion1, 0, 0
 Pablo7, perez7, jugador, 5, posicion2, 0, 0
-Pablo8, perez8, jugador, 5, posicion1, 0, 7
+Pablo8, perez8, jugador, 5, posicion1, 0, 13
 Pablo9, perez9, jugador, 5, posicion2, 0, 0
 Pablo10, perez10, jugador, 5, posicion1, 0, 0
 Pablo11, perez11, jugador, 5, posicion2, 0, 0
@@ -58,12 +58,12 @@ Pablo12, perez12, jugador, 5, posicion1, 0, 0
 Pablo13, perez13, jugador, 5, posicion2, 0, 0
 Pablo14, perez14, director, 5
 Pablo15, perez15, entrenador, 5
-JodeAbuelas, 0, rugby subacuatico
+JodeAbuelas, 0, rugby subacuatico, 15609,06
 Madrid1, perez1, jugador, 6, posicion1, 0, 0
 Madrid2, perez2, jugador, 6, posicion2, 0, 0
 Madrid3, perez3, jugador, 6, posicion3, 0, 0
 Madrid4, perez4, jugador, 6, posicion1, 0, 0
-Madrid5, perez5, jugador, 6, posicion2, 0, 7
+Madrid5, perez5, jugador, 6, posicion2, 0, 13
 Madrid6, perez6, jugador, 6, posicion1, 0, 0
 Madrid7, perez7, jugador, 6, posicion2, 0, 0
 Madrid8, perez8, jugador, 6, posicion1, 0, 0
@@ -75,27 +75,27 @@ Madrid13, perez13, jugador, 6, posicion1, 0, 0
 Madrid14, perez14, jugador, 6, posicion2, 0, 1
 Madrid15, perez15, director, 6
 Madrid16, perez16, entrenador, 6
-MachacaAbuelas, 0, voleibol
+MachacaAbuelas, 0, voleibol, 10406,04
 City1, perez1, jugador, 7, posicion2, 0, 0
-City2, perez2, jugador, 7, posicion2, 0, 7
+City2, perez2, jugador, 7, posicion2, 0, 13
 City3, perez3, jugador, 7, posicion2, 0, 0
 City4, perez4, jugador, 7, posicion2, 0, 0
 City5, perez5, jugador, 7, posicion2, 0, 0
 City6, perez6, jugador, 7, posicion2, 0, 0
 City7, perez7, director, 7
 City8, perez8, entrenador, 7
-CagaAbuelas, 0, voleibol
-Pepinho1, perez1, jugador, 9, posicion2, 0, 0
+CagaAbuelas, 0, voleibol, 10828,57
+Pepinho1, perez1, jugador, 8, posicion2, 0, 0
 Pepinho2, perez2, jugador, 8, posicion2, 0, 0
 Pepinho3, perez3, jugador, 8, posicion2, 0, 0
-Pepinho4, perez4, jugador, 8, posicion2, 0, 7
+Pepinho4, perez4, jugador, 8, posicion2, 0, 13
 Pepinho5, perez5, jugador, 8, posicion2, 0, 0
 Pepinho6, perez6, jugador, 8, posicion2, 0, 0
-Pepinho7, perez7, jugador, 8, posicion2, 0, 7
+Pepinho7, perez7, jugador, 8, posicion2, 0, 13
 Pepinho8, perez8, director, 8
 Pepinho9, perez9, entrenador, 8
-AsaltaAbuelas, 0, voleibol
-Aaron1, perez1, jugador, 8, posicion2, 0, 0
+AsaltaAbuelas, 0, voleibol, 3200,00
+Aaron1, perez1, jugador, 9, posicion2, 0, 0
 Aaron2, perez2, jugador, 9, posicion2, 0, 0
 Aaron3, perez3, jugador, 9, posicion2, 0, 0
 Aaron4, perez4, jugador, 9, posicion2, 0, 0
@@ -105,4 +105,4 @@ Aaron7, perez7, jugador, 9, posicion2, 0, 0
 Aaron8, perez8, director, 9
 Aaron9, perez9, entrenador, 9
 Juan99, perez99, jugador, 0, posicion2, 0, 0
-Juan100, perez100, jugador, 0, posicion1, 0, 0
+Juan100, perez100, jugador, 0, posicion1, 9, 9

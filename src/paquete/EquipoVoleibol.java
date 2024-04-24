@@ -4,8 +4,8 @@ public class EquipoVoleibol extends Equipo{
 
 	private static int nVoleibol = 0;
 	
-	public EquipoVoleibol(String nombreEquipo, Deporte deporte) {
-		super(nombreEquipo, deporte);
+	public EquipoVoleibol(String nombreEquipo, Deporte deporte, double presupuesto) {
+		super(nombreEquipo, deporte, presupuesto);
 		nVoleibol = nVoleibol++;
 	}
 

@@ -18,10 +18,11 @@ public abstract class Equipo {
 	private String ultimoIntercambio;
 	// datos de la carpeta temporal
 
-	public Equipo(String nombreEquipo, Deporte deporte) {
+	public Equipo(String nombreEquipo, Deporte deporte, double presupuesto) {
 		this.id = contador++;
 		this.nombreEquipo = nombreEquipo;
 		this.deporte = deporte;
+		this.presupuesto = presupuesto;
 		this.ultimoIntercambio = "No hay intercambios recientes";
 	}
 
@@ -42,9 +43,11 @@ public abstract class Equipo {
             for (Persona persona : Persona.ListaPersona) {
                 if (persona.getIdEquipo()==equipo.getId())
                     equipo.getGrupoPersonales().add(persona);
-                if (persona.getIdEquipo() == 0)
-                    Equipo.getBolsa().add(persona);
             }
+        }
+        for (Persona persona : Persona.ListaPersona) {
+        	if (persona.getIdEquipo() == 0)
+                Equipo.getBolsa().add(persona);
         }
         Persona.ActualizarFicheroEquipos();
         Entrenador.EstablecerTitular();

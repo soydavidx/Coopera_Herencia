@@ -214,6 +214,7 @@ public class principal {
             	Equipo equipo1 = verificarNombreEquipo(datos[0]);
             	Equipo equipo2 = verificarNombreEquipo(datos[2]);
             	Equipo.sumarPuntos(equipo1, Integer.parseInt(datos[1]), equipo2, Integer.parseInt(datos[3]));
+            	Equipo.AnadirPorcentajeEquipo(equipo1, equipo2, Integer.parseInt(datos[1]), Integer.parseInt(datos[3]));
             }
         }
         Persona.ActualizarFicheroEquipos();

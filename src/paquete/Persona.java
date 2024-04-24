@@ -39,19 +39,21 @@ public abstract class Persona {
                     ListaPersona.add(new Entrenador(datos[0], datos[1], datos[2], Integer.parseInt(datos[3])));
                 case "director" ->
                     ListaPersona.add(new Director(datos[0], datos[1], datos[2], Integer.parseInt(datos[3])));
-                case "Sepak Takraw" -> Equipo.ListaEquipos.add(new EquipoSepak(datos[0], Deporte.Deportes.get(0)));
-                case "voleibol" -> Equipo.ListaEquipos.add(new EquipoRugby(datos[0], Deporte.Deportes.get(1)));
-                case "Rugby Subacuatico" ->
-                    Equipo.ListaEquipos.add(new EquipoVoleibol(datos[0], Deporte.Deportes.get(2)));
+                case "sepak takraw" -> Equipo.ListaEquipos.add(new EquipoSepak(datos[0], Deporte.Deportes.get(0), Double.parseDouble(datos[3])));
+                case "voleibol" -> Equipo.ListaEquipos.add(new EquipoRugby(datos[0], Deporte.Deportes.get(1), Double.parseDouble(datos[3])));
+                case "rugby subacuatico" ->
+                    Equipo.ListaEquipos.add(new EquipoVoleibol(datos[0], Deporte.Deportes.get(2), Double.parseDouble(datos[3])));
                 }
             }
             for (Equipo equipo : Equipo.ListaEquipos) {
                 for (Persona persona : ListaPersona) {
                     if (persona.getIdEquipo() == equipo.getId())
                         equipo.getGrupoPersonales().add(persona);
-                    if (persona.getIdEquipo() == 0)
-                        Equipo.getBolsa().add(persona);
                 }
+            }
+            for (Persona persona : ListaPersona) {
+            	if (persona.getIdEquipo() == 0)
+            		Equipo.getBolsa().add(persona);
             }
         } catch (Exception e) {
             System.out.println("Error.");
@@ -59,14 +61,13 @@ public abstract class Persona {
         } finally {
             br.close();
         }
-
     }
 
 	public static void ActualizarFicheroEquipos() throws IOException {
         BufferedWriter brw = new BufferedWriter(new FileWriter("src/MiembrosEquipo.txt"));
         try {
             for (Equipo equipo : Equipo.ListaEquipos) {
-                brw.write(equipo.getNombreEquipo() + ", " + 0 + ", " + equipo.getDeporte().getNombre() + "\n");
+                brw.write(equipo.getNombreEquipo() + ", " + 0 + ", " + equipo.getDeporte().getNombre() + ", " + String.format("%.2f", equipo.getPresupuesto()) + "\n");
                 for (Persona persona : equipo.getGrupoPersonales()) {
                     switch (persona.getProfesion()) {
                     case "jugador" -> brw.write(persona.getNombre() + ", " + persona.getApellido() + ", "
